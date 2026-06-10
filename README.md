@@ -95,6 +95,14 @@ npm run dev
 
 http://localhost:3000
 
+### Frontend (Vercel):
+
+https://load-balancer-simulatorr.vercel.app
+
+### Backend (Render):
+
+https://load-balancer-simulator-oy2d.onrender.com
+
 ## Future Improvements
 
 * IP Hashing Algorithm
