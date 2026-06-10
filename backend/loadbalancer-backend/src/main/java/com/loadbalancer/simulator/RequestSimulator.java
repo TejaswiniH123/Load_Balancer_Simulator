@@ -1,6 +1,7 @@
 package com.loadbalancer.simulator;
 
 import com.loadbalancer.model.RequestData;
+import com.loadbalancer.service.LoadBalancerService;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
@@ -21,6 +22,14 @@ public class RequestSimulator {
     private final Random random =
             new Random();
 
+    private final LoadBalancerService loadBalancerService;
+
+    public RequestSimulator(
+            LoadBalancerService loadBalancerService
+    ) {
+        this.loadBalancerService = loadBalancerService;
+    }
+
     @Scheduled(fixedRate = 2000)
     public void generateRequest() {
 
@@ -33,6 +42,9 @@ public class RequestSimulator {
                 );
 
         requestQueue.add(request);
+
+        // Route request through load balancer
+        loadBalancerService.routeRequest();
 
         System.out.println(
                 "Generated Request -> " + request
