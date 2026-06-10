@@ -8,7 +8,7 @@ export const connectWebSocket = (
 ) => {
 
 const socket = new SockJS(
-  "http://localhost:8080/ws"
+"https://load-balancer-simulator-oy2d.onrender.com/ws"
 );
 
   client = new Client({
