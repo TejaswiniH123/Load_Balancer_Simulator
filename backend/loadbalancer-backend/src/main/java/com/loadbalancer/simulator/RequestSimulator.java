@@ -24,6 +24,8 @@ public class RequestSimulator {
 
     private final LoadBalancerService loadBalancerService;
 
+    private boolean simulationRunning = false;
+
     public RequestSimulator(
             LoadBalancerService loadBalancerService
     ) {
@@ -32,6 +34,10 @@ public class RequestSimulator {
 
     @Scheduled(fixedRate = 2000)
     public void generateRequest() {
+
+        if (!simulationRunning) {
+            return;
+        }
 
         RequestData request =
                 new RequestData(
@@ -43,12 +49,27 @@ public class RequestSimulator {
 
         requestQueue.add(request);
 
-        // Route request through load balancer
         loadBalancerService.routeRequest();
+
+        if (requestQueue.size() > 100) {
+            requestQueue.poll();
+        }
 
         System.out.println(
                 "Generated Request -> " + request
         );
+    }
+
+    public void startSimulation() {
+        simulationRunning = true;
+    }
+
+    public void stopSimulation() {
+        simulationRunning = false;
+    }
+
+    public boolean isSimulationRunning() {
+        return simulationRunning;
     }
 
     public Queue<RequestData> getRequestQueue() {
