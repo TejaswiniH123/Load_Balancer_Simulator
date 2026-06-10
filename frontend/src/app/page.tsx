@@ -43,6 +43,11 @@ import {
 }
 from "../services/scalingService";
 
+import {
+  startSimulation,
+  stopSimulation
+} from "../services/simulationService";
+
 import AutoScaleCard
 from "../components/AutoScaleCard";
 
@@ -171,6 +176,34 @@ setTrendData((prev) => [
     darkMode={darkMode}
     toggle={toggleTheme}
   />
+
+</div>
+
+<div className="flex gap-4 mb-6">
+
+  <button
+    onClick={startSimulation}
+    className="
+      bg-green-600
+      px-4
+      py-2
+      rounded
+      text-white"
+  >
+    ▶ Start Traffic
+  </button>
+
+  <button
+    onClick={stopSimulation}
+    className="
+      bg-red-600
+      px-4
+      py-2
+      rounded
+      text-white"
+  >
+    ⏹ Stop Traffic
+  </button>
 
 </div>
 
