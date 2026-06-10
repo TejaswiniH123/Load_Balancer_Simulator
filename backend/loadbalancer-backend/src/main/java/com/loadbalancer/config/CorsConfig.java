@@ -17,11 +17,12 @@ public class CorsConfig {
                     CorsRegistry registry
             ) {
 
-                registry.addMapping("/**")
-                        .allowedOrigins(
-                                "http://localhost:3000"
-                        )
-                        .allowedMethods("*");
+registry.addMapping("/**")
+        .allowedOrigins(
+                "http://localhost:3000",
+                "https://load-balancer-simulatorr.vercel.app"
+        )
+        .allowedMethods("*");
             }
         };
     }
