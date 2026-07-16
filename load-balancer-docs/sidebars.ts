@@ -4,16 +4,18 @@ const sidebars: SidebarsConfig = {
   docsSidebar: [
     'intro',
 
-    {
-      type: 'category',
-      label: 'Getting Started',
-      items: [
-        'getting-started/overview',
-        'getting-started/installation',
-        'getting-started/prerequisites',
-        'getting-started/configuration',
-      ],
-    },
+{
+  type: 'category',
+  label: 'Developer Guide',
+  items: [
+    'developer-guide/project-structure',
+    'developer-guide/code-structure',
+    'developer-guide/adding-algorithm',
+    'developer-guide/coding-standards',
+    'developer-guide/architecture-decisions',
+  ],
+},
+
 
     {
       type: 'category',
@@ -77,16 +79,16 @@ const sidebars: SidebarsConfig = {
       ],
     },
 
-    {
-      type: 'category',
-      label: 'Support',
-      items: [
-        'troubleshooting/troubleshooting',
-        'troubleshooting/faq',
-        'troubleshooting/limitations',
-        'release-notes',
-      ],
-    },
+{
+  type: 'category',
+  label: 'Support',
+  items: [
+    'troubleshooting',
+    'faq',
+    'limitations',
+    'future-improvements',
+  ],
+},
   ],
 };
 
