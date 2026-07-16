@@ -1,21 +1,8 @@
-import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
+import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 
 const sidebars: SidebarsConfig = {
   docsSidebar: [
     'intro',
-
-{
-  type: 'category',
-  label: 'Developer Guide',
-  items: [
-    'developer-guide/project-structure',
-    'developer-guide/code-structure',
-    'developer-guide/adding-algorithm',
-    'developer-guide/coding-standards',
-    'developer-guide/architecture-decisions',
-  ],
-},
-
 
     {
       type: 'category',
@@ -43,6 +30,7 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Algorithms',
       items: [
+        'algorithms/strategy-pattern',
         'algorithms/round-robin',
         'algorithms/weighted-round-robin',
         'algorithms/least-connections',
@@ -72,23 +60,24 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Developer Guide',
       items: [
-        'developer-guide/folder-structure',
+        'developer-guide/project-structure',
         'developer-guide/code-structure',
         'developer-guide/adding-algorithm',
         'developer-guide/coding-standards',
+        'developer-guide/architecture-decisions',
       ],
     },
 
-{
-  type: 'category',
-  label: 'Support',
-  items: [
-    'troubleshooting',
-    'faq',
-    'limitations',
-    'future-improvements',
-  ],
-},
+    {
+      type: 'category',
+      label: 'Support',
+      items: [
+        'troubleshooting',
+        'faq',
+        'limitations',
+        'future-improvements',
+      ],
+    },
   ],
 };
 
